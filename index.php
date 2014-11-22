@@ -17,6 +17,7 @@
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     </head>
     <body id="home">
+    <?php include_once("tracking.html"); ?>
         <div class="container-fluid">
         <div class="header">
         <p>~/portfolio/index.php</p>
