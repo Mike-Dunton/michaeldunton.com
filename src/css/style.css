@@ -70,10 +70,16 @@ a:hover {
     background-color: #2d2d2d;
     text-align: center;
 }
+
+.column-two a:link {
+    color: #999999;
+}
+
 .sidebar-navigation-container {
     padding-top: 8px;
     text-shadow: 1px -1px #000;
 }
+
 
 .nav-item-first-level {
     padding-left: 8px;
@@ -83,7 +89,7 @@ a:hover {
     margin-top: 5px;
 }
 
-#home .home {
+#home .home, #kazoo .kazoo {
     color: #d2d2d2;
     text-shadow: 1px 1px #000;
     background-image: -ms-linear-gradient(top, #4E4E4E 0%, #434343 100%);

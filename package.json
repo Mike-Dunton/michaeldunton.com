@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1",
+  "description": "A site to showcase various projects",
+  "main": "index.php",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mike-Dunton/michaeldunton.com.git"
+  },
+  "author": "Michael Dunton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mike-Dunton/michaeldunton.com/issues"
+  },
+  "homepage": "https://github.com/Mike-Dunton/michaeldunton.com",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-cssmin": "^0.10.0"
+  }
+}
