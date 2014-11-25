@@ -71,8 +71,12 @@ a:hover {
     text-align: center;
 }
 
-.column-two a:link {
-    color: #999999;
+#content a,
+#content a:link,
+#content a:visited {
+    color: #9C9;
+    text-decoration: inherit;
+    font-weight: inherit;
 }
 
 .sidebar-navigation-container {

@@ -20,7 +20,6 @@ class VisitTracker
         $insert = $dbh->_dbh->prepare("INSERT INTO indexVisit (referer, userAgent, ip)
                                        VALUES (:referer, :userAgent, :ip)");
         $insert->execute($data);
-        die();
     }
 
 }

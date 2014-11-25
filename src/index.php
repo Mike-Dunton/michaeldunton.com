@@ -17,11 +17,16 @@
             <div class="height-maximizer">
                 <div class="row">
                     <?php include_once("navigation.html"); ?>
-                    <div class="col-md-10 column-two">
-                        <p>Michael Dunton was here.</p>
+                    <div class="col-xs-10 column-two">
+                        <div id="content">
+                            <p>Michael Dunton was here.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src"https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
     </body>
 </html>
