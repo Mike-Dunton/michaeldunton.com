@@ -19,7 +19,10 @@
                     <?php include_once("navigation.html"); ?>
                     <div class="col-xs-10 column-two">
                         <div id="content">
-                            <p>Michael Dunton was here.</p>
+                            <h1>I am Michael Dunton.</h1>
+                            <p>Software developer, tech enthusiast, and nature lover living in Tallahassee, Florida.</p>
+                            <p>This website's design was inspired by my favorite text editor, <a target="_blank" href="http://www.sublimetext.com/3">Sublime Text 3</a>.</p>       
+                            <p>My current project is powered by Kazoo, Erlang, Node, RabbitMQ, Puppet, Durandal, and Github. I enjoy working on the server side to ensure that customer data is reliable, persistent, and secure.</p>
                         </div>
                     </div>
                 </div>
