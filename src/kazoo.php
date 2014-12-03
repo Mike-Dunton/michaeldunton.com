@@ -12,7 +12,7 @@
     <?php include_once("tracking.html"); ?>
         <div class="container-fluid">
         <div class="header">
-        <p>~/portfolio/kazoo.php</p>
+        ~/portfolio/kazoo.php
         </div>
             <div class="height-maximizer">
                     <div class="row">
