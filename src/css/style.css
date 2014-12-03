@@ -74,8 +74,8 @@ a:hover {
     font-weight: inherit;
 }
 
-#content h1, {
-    color: #fff;
+h1 {
+    color: #D8D8D8;
 }
 
 .sidebar-navigation-container {
