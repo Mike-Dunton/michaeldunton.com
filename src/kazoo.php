@@ -26,6 +26,7 @@
                         </div>
                     </div>
             </div>
+            <?php include_once("footer.html");
         </div>
     </body>
 </html>
