@@ -1,0 +1,14 @@
+CREATE DATABASE indexVisits;
+CREATE USER 'dbUser'@'localhost' IDENTIFIED BY 'myPass';
+GRANT ALL PRIVILEGES ON  indexVisits.* TO 'dbUser'@'localhost';
+FLUSH PRIVILEGES;
+
+CREATE TABLE indexVisit(
+`id` int(6) NOT NULL auto_increment,
+`visitDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`referer` varchar(250) NOT NULL default '',
+`userAgent` varchar(250) NOT NULL default '',
+`ip` varchar(20) NOT NULL default '',
+ PRIMARY KEY (`id`),
+ INDEX (`visitDate`)
+ ) ENGINE=MyISAM DEFAULT CHARSET=latin1; 

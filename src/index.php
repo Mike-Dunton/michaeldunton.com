@@ -2,7 +2,7 @@
     include_once('db.php');
     include_once('visitTracker.php');
 
-    $visitTracker = new VisitTracker();
+    $visitTracker = new Page("Home");
     $visitTracker->track($_SERVER);
 ?>
 <!DOCTYPE html>

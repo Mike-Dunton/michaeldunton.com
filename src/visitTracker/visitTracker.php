@@ -7,9 +7,9 @@ class page
 
     public function __construct( $title ) {
         $this->databaseHandler = dbHandler::getConnection();
-        $this->databaseHandler->_dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        $this->databaseHandler->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
         $this->pageTitle = $title;
-        $this->maybe_initialize_table();
+        maybe_initialize_table();
     }
 
     public function track($information) {
@@ -18,26 +18,27 @@ class page
             $referer = $information['HTTP_REFERER'];
         }
         $data = array(
+            'table' => $this->pageTitle,
             'referer' => $referer,
             'userAgent' => $information['HTTP_USER_AGENT'],
             'ip' => $information['REMOTE_ADDR']);
 
-        $insert = $this->databaseHandler->_dbh->prepare( "INSERT INTO $this->pageTitle (referer, userAgent, ip)
+        $insert = $dbh->_dbh->prepare( "INSERT INTO :table (referer, userAgent, ip)
                                        VALUES (:referer, :userAgent, :ip)" );
         $insert->execute( $data );
     }
 
     private function maybe_initialize_table() {
         if( isset( $this->pageTitle ) ){
-            if($this->is_page_table_created() === false) {
-                $this->create_page_table();
+            if(is_page_table_created() === false) {
+                create_page_table();
             }
         }
 
     }
 
     private function is_page_table_created() {
-        $statement = $this->databaseHandler->_dbh->prepare( "SHOW TABLES LIKE ?" );
+        $statement = $this->databaseHandler->prepare( 'SHOW TABLE LIKE ?' );
         $statement->bindParam( 1, $this->pageTitle, PDO::PARAM_STR );
         $statement->execute();
         $row_count = $statement->rowCount();
@@ -45,15 +46,15 @@ class page
     }
 
     private function create_page_table() {
-        $statement = $this->databaseHandler->_dbh->prepare("CREATE TABLE $this->pageTitle (
+        $statement = $this->databaseHandler->prepare("CREATE TABLE ?(
             `id` int(6) NOT NULL auto_increment,
-            `visitDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            `visitDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `referer` varchar(250) NOT NULL default '',
             `userAgent` varchar(250) NOT NULL default '',
             `ip` varchar(20) NOT NULL default '',
              PRIMARY KEY (`id`),
              INDEX (`visitDate`)) ENGINE=MyISAM DEFAULT CHARSET=latin1");
-        //$statement->bindParam(1, $this->pageTitle, PDO::PARAM_STR);
+        $statement->bindParam(1, $this->pageTitle, PDO::PARAM_STR);
         $statement->execute();
     }
 
