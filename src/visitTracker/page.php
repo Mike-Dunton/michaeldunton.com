@@ -6,8 +6,8 @@ class page
     private $pageTitle;
 
     public function __construct( $title ) {
-        $this->databaseHandler = dbHandler::getConnection();
-        $this->databaseHandler->_dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        $this->databaseHandler = databaseHandler::getConnection();
+        $this->databaseHandler->connection->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
         $this->pageTitle = $title;
         $this->maybe_initialize_table();
     }
@@ -22,7 +22,7 @@ class page
             'userAgent' => $information['HTTP_USER_AGENT'],
             'ip' => $information['REMOTE_ADDR']);
 
-        $insert = $this->databaseHandler->_dbh->prepare( "INSERT INTO $this->pageTitle (referer, userAgent, ip)
+        $insert = $this->databaseHandler->connection->prepare( "INSERT INTO $this->pageTitle (referer, userAgent, ip)
                                        VALUES (:referer, :userAgent, :ip)" );
         $insert->execute( $data );
     }
@@ -37,7 +37,7 @@ class page
     }
 
     private function is_page_table_created() {
-        $statement = $this->databaseHandler->_dbh->prepare( "SHOW TABLES LIKE ?" );
+        $statement = $this->databaseHandler->connection->prepare( "SHOW TABLES LIKE ?" );
         $statement->bindParam( 1, $this->pageTitle, PDO::PARAM_STR );
         $statement->execute();
         $row_count = $statement->rowCount();
@@ -45,7 +45,7 @@ class page
     }
 
     private function create_page_table() {
-        $statement = $this->databaseHandler->_dbh->prepare("CREATE TABLE $this->pageTitle (
+        $statement = $this->databaseHandler->connection->prepare("CREATE TABLE $this->pageTitle (
             `id` int(6) NOT NULL auto_increment,
             `visitDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `referer` varchar(250) NOT NULL default '',
@@ -53,7 +53,6 @@ class page
             `ip` varchar(20) NOT NULL default '',
              PRIMARY KEY (`id`),
              INDEX (`visitDate`)) ENGINE=MyISAM DEFAULT CHARSET=latin1");
-        //$statement->bindParam(1, $this->pageTitle, PDO::PARAM_STR);
         $statement->execute();
     }
 

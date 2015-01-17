@@ -1,6 +1,5 @@
 <?php
-    include_once('db.php');
-    include_once('visitTracker.php');
+    include_once('visitTracker/visitTracker.php');
 
     $visitTracker = new Page("Home");
     $visitTracker->track($_SERVER);
