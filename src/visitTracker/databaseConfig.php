@@ -1,7 +1,9 @@
-<?
+<?PHP
+
 return array(
     'databaseHost' => 'localhost',
-    'databaseUser' => 'root',
+    'databaseUser' => 'user',
     'databasePassword' => 'password'
 );
+
 ?>

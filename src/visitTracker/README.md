@@ -2,8 +2,9 @@
 ## Set up
 Create the database user and grant privileges to the user. 
 ```
-CREATE USER 'dbUser'@'localhost' IDENTIFIED BY 'myPass';
-GRANT ALL PRIVILEGES ON  indexVisits.* TO 'dbUser'@'localhost';
+CREATE DATABASE visitTracker;
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON  visitTracker.* TO 'user'@'localhost';
 FLUSH PRIVILEGES;
 ```
 

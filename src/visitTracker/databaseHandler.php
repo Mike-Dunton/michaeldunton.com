@@ -1,18 +1,17 @@
 <?php
 
-$databaseConfigs = include("databaseConfig.php");
-
 class databaseHandler {
     private static $instance;
     public $connection;
 
-    private function __construct() {
+    private function __construct($databaseConfigs) {
+
         $host = $databaseConfigs['databaseHost'];
         $user = $databaseConfigs['databaseUser'];
         $password = $databaseConfigs['databasePassword'];
-        try {
-            $this->$connection = new PDO('mysql:host=$host;dbname=visitors', '$databaseUser' ,'$databasePassword', array(PDO::ATTR_PERSISTENT => true));
 
+        try {
+            $this->connection = new PDO("mysql:host=$host;dbname=visitTracker", $user , $password, array(PDO::ATTR_PERSISTENT => true));
         } catch(PDOEception $error){
             echo $error->getMessage();
         }
@@ -21,9 +20,10 @@ class databaseHandler {
     public static function getConnection() {
         if ( self::$instance === null )
         {
-            self::$instance = new dbHandler();
+            $databaseConfigs = include 'databaseConfig.php';
+            self::$instance = new databaseHandler($databaseConfigs);
         }
-        return self::$_instance;
+        return self::$instance;
     }
 
 
