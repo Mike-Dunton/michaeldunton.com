@@ -1,8 +1,7 @@
 <?php
-    include_once('db.php');
-    include_once('visitTracker.php');
+    include_once('visitTracker/visitTracker.php');
 
-    $visitTracker = new VisitTracker();
+    $visitTracker = new Page("Kazoo");
     $visitTracker->track($_SERVER);
 ?>
 <!DOCTYPE html>
@@ -26,7 +25,7 @@
                         </div>
                     </div>
             </div>
-            <?php include_once("footer.html");
+            <?php include_once("footer.html"); ?>
         </div>
     </body>
 </html>

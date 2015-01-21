@@ -1,3 +1,5 @@
+# visitTracker
+Simple php application that tracks visitor information 
 
 ## Set up
 Create the database user and grant privileges to the user. 
