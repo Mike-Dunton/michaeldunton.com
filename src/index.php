@@ -16,7 +16,7 @@
             <div class="height-maximizer">
                 <div class="row">
                     <?php include_once("navigation.html"); ?>
-                    <div class="col-xs-10 column-two">
+                    <div class="col-md-10 column-two">
                         <div id="content" itemscope itemtype="http://data-vocabulary.org/Person">
                             <h1>I am <span itemprop="name">Michael Dunton</span>.</h1>
                             <p><span itemprop="title">Software developer</span>, tech enthusiast, and nature lover living in Tallahassee, Florida.</p>
@@ -34,7 +34,6 @@
             </div>
             <?php include_once("footer.html"); ?>
         </div>
-
         <script src"https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 

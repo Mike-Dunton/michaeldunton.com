@@ -115,3 +115,29 @@ h1 {
     background-image: -webkit-linear-gradient(top, #2d2d2d 0%, #1e1e1e 100%);
     box-shadow: 0px -3px 5px 0px #000;
 }
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+
+    .nav-item-first-level {
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+
+    .nav-item-second-level {
+        padding-left: 23px;
+    }
+
+    .nav-item-first-level span {
+        display: none;
+    }
+
+    .nav-item-second-level span {
+        display: none;
+    }
+    .fa {
+        font-size: 30px;
+    }
+}
+

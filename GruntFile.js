@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
   // Project configuration.
+var mozjpeg = require('imagemin-mozjpeg');
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
       clean: ["build"],
@@ -13,21 +14,32 @@ module.exports = function(grunt) {
       cssmin: {
         add_banner: {
           options: {
-            banner: '/* Michael Dunton minified css file */'
+            banner: '/* Michael Dunton minified css file */',
           },
           files: {
             'build/css/style.css': ['src/css/*.css']
           }
         }
-      }
+      },
+      imagemin: {                          
+        static: {                          
+          options: {                       
+            optimizationLevel: 3,
+            svgoPlugins: [{ removeViewBox: false }],
+            use: [mozjpeg()]
+          },
+          files: {
+            'build/img/self.jpeg': 'src/img/self.jpeg',
+          }
+        }
+  }
   });
 
-  // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-  // Default task(s).
-  grunt.registerTask('default', ['clean', 'copy', 'cssmin']);
+  grunt.registerTask('default', ['clean', 'copy', 'cssmin', 'imagemin']);
 
 };
