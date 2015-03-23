@@ -21,6 +21,25 @@ var mozjpeg = require('imagemin-mozjpeg');
           }
         }
       },
+      htmlmin: {                                     // Task
+        dist: {                                      // Target
+          options: {                                 // Target options
+            removeComments: true,
+            collapseWhitespace: true
+          },
+          files: [{
+             expand: true,
+             cwd: 'src',
+             src: '**/*.html',
+             dest: 'build/'
+          }, {
+             expand: true,
+             cwd: 'src',
+             src: '**/*.php',
+             dest: 'build/'
+          }]
+        }
+      },
       imagemin: {                          
         static: {                          
           options: {                       
@@ -38,8 +57,9 @@ var mozjpeg = require('imagemin-mozjpeg');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-  grunt.registerTask('default', ['clean', 'copy', 'cssmin', 'imagemin']);
+  grunt.registerTask('default', ['clean', 'copy', 'cssmin', 'imagemin', 'htmlmin']);
 
 };
