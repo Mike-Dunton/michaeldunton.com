@@ -20,7 +20,7 @@
                             <div id="content">
                                 <h1>Kazoo</h1>
                                 <p><a href="http://2600hz.org/products.html">Kazoo</a> is a scalable, distributed, cloud-based telephony platform that allows you to build powerful telephony applications with a rich set of APIs.</p>
-                                <p>My current job has me working intimently with the kazoo playform. You can view my public contributions <a href="https://github.com/2600hz/kazoo/commits?author=Mike-Dunton">here on github.</a></p>
+                                <p>My current job has me working intimately with the kazoo platform. You can view my public contributions <a href="https://github.com/2600hz/kazoo/commits?author=Mike-Dunton">here on github.</a></p>
                                 </div>
                         </div>
                     </div>
