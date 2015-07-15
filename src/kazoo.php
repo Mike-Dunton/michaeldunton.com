@@ -1,9 +1,3 @@
-<?php
-    include_once('visitTracker/visitTracker.php');
-
-    $visitTracker = new Page("Kazoo");
-    $visitTracker->track($_SERVER);
-?>
 <!DOCTYPE html>
 <html lang="en">
     <?php include_once("head.html"); ?>

@@ -1,9 +1,3 @@
-<?php
-    include_once('visitTracker/visitTracker.php');
-
-    $visitTracker = new Page("Home");
-    $visitTracker->track($_SERVER);
-?>
 <!DOCTYPE html>
 <html lang="en">
     <?php include_once("head.html"); ?>
@@ -23,8 +17,7 @@
                             <p>This website's design is inspired by my favorite text editor, 
                             <a target="_blank" href="http://www.sublimetext.com/3">Sublime Text 3</a>.</p>
                             <p>I am a graduate of Florida State University where I earned my bachelor's degree in Computer Science. 
-                            After graduation I started a full time position as a software developer at <a target="_blank" href="http://www.hostednumbers.com/"><span itemprop="affiliation">PATLive</span></a> where I have learned a 
-                            tremendous amount of information.</p>
+                            After graduation I started a full time position as a software developer at <a target="_blank" href="http://www.tresta.com/"><span itemprop="affiliation">Tresta</span></a>. Tresta is a cloud based business phone system.</p>
                             <p>I enjoy working on the server side. My top software development goals are
                             providing high availability and securing user data.  
                             Check out my <a target="_blank" itemprop="url" href="http://www.linkedin.com/in/michaeldunton/">linkedin</a> for an idea of what kind of technologies I have worked with.
